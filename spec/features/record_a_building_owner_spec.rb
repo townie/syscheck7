@@ -20,14 +20,13 @@ feature 'record a building owner', %q{
     fill_in "First name", with: "Keith"
     fill_in "Last name", with: "Webber"
     fill_in "Email", with: "MA@gmail.com"
-    fill_in "Comapny", with: "WebCo"
+    fill_in "Company", with: "WebCo"
 
-    click_on "Create new Owner"
+    click_on "Create new owner"
 
-    expect(page).to have_content("New owner created")
+    expect(page).to have_content("New owner created successfully")
     expect(Owner.count).to eq(owner_count + 1)
-
-    expect(page).to have_content("Register a new building")
+    expect(page).to have_content("Register a new Owner")
 
   end
 
@@ -35,16 +34,16 @@ feature 'record a building owner', %q{
     owner_count = Owner.count
     visit new_owner_path
 
-    fill_in "First name", with: ""
+    fill_in "First name", with: "12212"
     fill_in "Last name", with: "the Terrible"
     fill_in "Email", with: ""
-    fill_in "Comapny", with: "WebCo"
+    fill_in "Company", with: "WebCo"
 
-    click_on "Create new Owner"
-
-    expect(page).to have_content("First name can't be blank")
-    expect(page).to have_content("Please enter a valid email")
-    expect(Building.count).to eq(building_count)
+    click_on "Create new owner"
+    expect(page).to have_content("Please enter a valid first name")
+    expect(page).to have_content("Please enter a valid last name")
+    expect(page).to have_content("can't be blank")
+    expect(Owner.count).to eq(owner_count)
   end
 
 
