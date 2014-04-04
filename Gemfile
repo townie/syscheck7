@@ -10,11 +10,6 @@ source 'https://rubygems.org'
   gem 'turbolinks'
   gem 'jbuilder', '~> 1.2'
 
-
-  # Authentication
-  gem 'devise'
-
-
   # Front end UI gems
   gem 'simple_form'
   gem 'foundation-rails'
