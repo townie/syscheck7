@@ -15,6 +15,6 @@ describe Building do
   it { should_not have_valid(:state).when('', nil, "MASSSSSSS", "1ab") }
 
   it { should validate_presence_of(:postal_code) }
-  it { should have_valid(:postal_code).when('02129') }
-  it { should_not have_valid(:postal_code).when('', nil) }
+  it { should have_valid(:postal_code).when('02129', "12345") }
+  it { should_not have_valid(:postal_code).when('', nil, "25546455889") }
 end
