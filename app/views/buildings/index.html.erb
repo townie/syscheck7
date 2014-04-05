@@ -1,0 +1,19 @@
+
+<table>
+<tr>
+  <td>address</td>
+  <td>state</td>
+  <td>town</td>
+  <td>owner</td>
+
+</tr>
+<% @buildings.each do |building| %>
+  <tr>
+    <td><%= building.street_address %></td>
+    <td><%= building.state %></td>
+    <td><%= building.city %></td>
+    <td><%= building.owner.nil? ? "" : building.owner.full_name %></td>
+  </tr>
+<% end %>
+
+</table>

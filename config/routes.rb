@@ -1,9 +1,9 @@
 SystemsCheck7::Application.routes.draw do
 
-  resources :buildings, only: [:new, :create]
-  resources :owners, only: [:new, :create]
+  resources :buildings, only: [:new, :create, :index]
+  resources :owners, only: [:new, :create, :destroy, :show, :index]
 
-  root to: "static#welcome"
+  root to: "buildings#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

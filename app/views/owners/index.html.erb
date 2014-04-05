@@ -1,0 +1,20 @@
+<table>
+<tr>
+  <td>address</td>
+  <td>state</td>
+  <td>town</td>
+  <td>owner</td>
+  <td>delete </td>
+
+</tr>
+<% @owners.each do |owner| %>
+  <tr>
+    <td><%= owner.first_name %></td>
+    <td><%= owner.last_name %></td>
+    <td><%= owner.email %></td>
+    <td><%= owner.company.nil? ? "" : owner.company %></td>
+    <td><%= link_to "Destroy #{owner.first_name}", owner, method: :delete %></td>
+  </tr>
+<% end %>
+
+</table>
