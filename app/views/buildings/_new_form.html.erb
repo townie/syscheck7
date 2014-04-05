@@ -3,18 +3,23 @@
     <div class="small-12 medium-12 columns">
       <%= f.input :street_address,  required: true, placeholder: "4 Example Lane",  autofocus: true, label: "Street Address" %>
     </div>
-      <div class="small-12 medium-4 columns">
+    <div class="small-12 medium-4 columns">
       <%= f.input :city,            required: true, placeholder: "Boston"%>
     </div>
-        <div class="small-12 medium-4 columns">
+    <div class="small-12 medium-4 columns">
       <%= f.input :state,           required: true, placeholder: "MA"%>
     </div>
-        <div class="small-12 medium-4 columns">
+    <div class="small-12 medium-4 columns">
       <%= f.input :postal_code,     required: true, placeholder: "02129", label: "Postal Code" %>
     </div>
-    <div class="small-12 medium-12 columns">
+    <div class="small-12 medium-9 columns">
       <%= f.input :description, as: :text, placeholder: "Tell us about it" %>
     </div>
+    <div class="small-12 medium-3 columns">
+      <%= f.association :owner, label_method: :full_name, value_method: :id %>
+    </div>
+    <div class= "small-12 medium-12 columns">
+     <%= f.submit "Create new Building" %>
+    </div>
   </div>
-  <%= f.submit "Create new Building" %>
 <% end %>
