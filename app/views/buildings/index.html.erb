@@ -12,7 +12,11 @@
     <td><%= building.street_address %></td>
     <td><%= building.state %></td>
     <td><%= building.city %></td>
-    <td><%= building.owner.nil? ? "" : building.owner.full_name %></td>
+    <% if building.owner.nil? %>
+      <td> </td>
+    <% else %>
+      <td><%=building.owner.full_name %></td>
+    <% end %>
   </tr>
 <% end %>
 
